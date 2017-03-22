@@ -1379,6 +1379,12 @@ public class IrBlackBoxCodegenTestGenerated extends AbstractIrBlackBoxCodegenTes
             doTest(fileName);
         }
 
+        @TestMetadata("immutableRemove.kt")
+        public void testImmutableRemove() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/codegen/box/builtinStubMethods/immutableRemove.kt");
+            doTest(fileName);
+        }
+
         @TestMetadata("implementationInTrait.kt")
         public void testImplementationInTrait() throws Exception {
             String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/codegen/box/builtinStubMethods/implementationInTrait.kt");
@@ -14926,6 +14932,12 @@ public class IrBlackBoxCodegenTestGenerated extends AbstractIrBlackBoxCodegenTes
                 doTest(fileName);
             }
 
+            @TestMetadata("javaParametersHaveNoNames.kt")
+            public void testJavaParametersHaveNoNames() throws Exception {
+                String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/codegen/box/reflection/parameters/javaParametersHaveNoNames.kt");
+                doTest(fileName);
+            }
+
             @TestMetadata("kinds.kt")
             public void testKinds() throws Exception {
                 String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/codegen/box/reflection/parameters/kinds.kt");
@@ -15271,13 +15283,7 @@ public class IrBlackBoxCodegenTestGenerated extends AbstractIrBlackBoxCodegenTes
             @TestMetadata("getMembersOfStandardJavaClasses.kt")
             public void testGetMembersOfStandardJavaClasses() throws Exception {
                 String fileName = KotlinTestUtils.navigationMetadata("compiler/testData/codegen/box/reflection/specialBuiltIns/getMembersOfStandardJavaClasses.kt");
-                try {
-                    doTest(fileName);
-                }
-                catch (Throwable ignore) {
-                    return;
-                }
-                throw new AssertionError("Looks like this test can be unmuted. Remove IGNORE_BACKEND directive for that.");
+                doTest(fileName);
             }
         }
 
