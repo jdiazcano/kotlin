@@ -282,7 +282,7 @@ public class K2JSCompiler extends CLICompiler<K2JSCompilerArguments> {
             libraries.add(0, PathUtil.getKotlinPathsForCompiler().getJsStdLibJarPath().getAbsolutePath());
         }
 
-        if (arguments.libraries != null) {
+        if (arguments.libraries != null && !arguments.libraries.isEmpty()) {
             ContainerUtil.addAllNotNull(libraries, arguments.libraries.split(File.pathSeparator));
         }
 
