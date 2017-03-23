@@ -44,8 +44,6 @@ class SuspendFunctionGenerationStrategy(
         with(codegen.v) {
             invokeDoResumeWithUnit(coroutineCodegen.v.thisName)
 
-            codegen.markLineNumber(declaration, true)
-
             areturn(AsmTypes.OBJECT_TYPE)
         }
     }

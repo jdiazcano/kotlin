@@ -272,6 +272,12 @@ public class KotlinSteppingTestGenerated extends AbstractKotlinSteppingTest {
             doStepIntoTest(fileName);
         }
 
+        @TestMetadata("siSuspendFun.kt")
+        public void testSiSuspendFun() throws Exception {
+            String fileName = KotlinTestUtils.navigationMetadata("idea/testData/debugger/tinyApp/src/stepping/stepInto/siSuspendFun.kt");
+            doStepIntoTest(fileName);
+        }
+
         @TestMetadata("skipSimpleGetter.kt")
         public void testSkipSimpleGetter() throws Exception {
             String fileName = KotlinTestUtils.navigationMetadata("idea/testData/debugger/tinyApp/src/stepping/stepInto/skipSimpleGetter.kt");
