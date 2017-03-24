@@ -158,4 +158,4 @@ private fun anyInternalMembersWithThisName(name: String, project: Project): Bool
 }
 
 private class LazyLightClassMemberMatchingError(dummyMember: PsiMember, containingClass: KtLightClass)
-    : AssertionError("Error matching ${dummyMember::class}:${dummyMember.name} created for $containingClass")
+    : AssertionError("Error matching ${dummyMember::class.simpleName}:${dummyMember.name} created for $containingClass")
