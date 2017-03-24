@@ -180,7 +180,7 @@ internal class DelegatingDataFlowInfo private constructor(
 
         // NB: == has no guarantees of type equality, see KT-11280 for the example
         val newTypeInfo = newTypeInfo()
-        if (sameTypes) {
+        if (sameTypes || !nullabilityOfA.canBeNonNull() || !nullabilityOfB.canBeNonNull()) {
             newTypeInfo.putAll(a, getStableTypes(b, false))
             newTypeInfo.putAll(b, getStableTypes(a, false))
             if (a.type != b.type) {
