@@ -95,11 +95,10 @@ fun indexInternals(stub: KotlinCallableStubBase<*>, sink: IndexSink) {
 
     if (!modifierListStub.hasModifier(KtTokens.INTERNAL_KEYWORD)) return
 
-    val parentClass = stub.parentStub.parentStub as? KotlinClassStub ?: return
+    if (stub.isTopLevel()) return
 
     if (modifierListStub.hasModifier(KtTokens.OPEN_KEYWORD)
-        || modifierListStub.hasModifier(KtTokens.ABSTRACT_KEYWORD)
-        || parentClass.isInterface()) {
+        || modifierListStub.hasModifier(KtTokens.ABSTRACT_KEYWORD)) {
         sink.occurrence(KotlinOverridableInternalMembersShortNameIndex.Instance.key, name)
     }
 }
