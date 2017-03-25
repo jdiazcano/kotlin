@@ -101,7 +101,7 @@ internal abstract class KPropertyImpl<out R> private constructor(
 
     override abstract val getter: Getter<R>
 
-    private val descriptor_ = ReflectProperties.lazySoft(descriptorInitialValue) {
+    private val descriptor_ = ReflectProperties.lazySoft<PropertyDescriptor>(descriptorInitialValue) {
         container.findPropertyDescriptor(name, signature)
     }
 
